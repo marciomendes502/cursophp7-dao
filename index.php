@@ -29,11 +29,17 @@ $usuarios = $sql->select("SELECT * FROM tb_usuarios");
 
 echo json_encode($usuarios);*/
 
-$aluno = new Usuario("marciomendes", "@123@");
+// aqui foi feito a inserção de um aluno
+//$aluno = new Usuario("marciomendes", "@123@");
 //$aluno->setDeslogin("marciomendes");
 //$aluno->setDessenha("@123@");
-$aluno->insert();
-echo $aluno;
+//$aluno->insert();
+//echo $aluno;
 
+// aqui vai ser feita a atualização do aluno
+$aluno = new Usuario();
+$aluno->loadById(10);
+$aluno->update('virgilio@gmail.com','@sertao@');
+echo $aluno;
 
 ?>

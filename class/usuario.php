@@ -109,7 +109,18 @@ class Usuario{
         } else{
             echo "Usuario e Senha inválidos!";
         }
-        
+    }
+    public function update($login, $password){
+
+        $this->setDeslogin($login);
+        $this->setDessenha($password);
+
+        $sql = new Sql();
+        $result = $sql->query("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID;", array(
+            ':LOGIN'=>$this->getDeslogin(),
+            ':PASSWORD'=>$this->getDessenha(),
+            ':ID'=>$this->getIdusuario()
+        ));
 
     }
 
@@ -130,7 +141,6 @@ class Usuario{
         }
 
     }
-
 
 }
 
