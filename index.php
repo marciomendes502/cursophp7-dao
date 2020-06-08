@@ -18,15 +18,22 @@ require_once("config.php");
 //echo json_encode($search);
 
 //carrega um usuario usando o login e a senha
-$usuario = new Usuario();
-$usuario->login("getulio@yahoo.com.br","4444");
+//$usuario = new Usuario();
+//$usuario->login("getulio@yahoo.com.br","4444");
 
-echo $usuario;
+//echo $usuario;
 //primeiro exemplo
 /*$sql = new Sql();
 
 $usuarios = $sql->select("SELECT * FROM tb_usuarios");
 
 echo json_encode($usuarios);*/
+
+$aluno = new Usuario("marciomendes", "@123@");
+//$aluno->setDeslogin("marciomendes");
+//$aluno->setDessenha("@123@");
+$aluno->insert();
+echo $aluno;
+
 
 ?>
