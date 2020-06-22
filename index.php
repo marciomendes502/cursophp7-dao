@@ -8,10 +8,8 @@ require_once("config.php");
 //echo $usuario;
 
 // carrega uma lista de usuários
-
 //$lista = Usuario::getList();
-
-//echo json_encode($lista);
+//echo json_encode($lista); // tranforma indice e valores associados em json_encode
 
 // carrega uma lista de usuários buscando pelo login
 //$search = Usuario::search("lio");
@@ -30,16 +28,24 @@ $usuarios = $sql->select("SELECT * FROM tb_usuarios");
 echo json_encode($usuarios);*/
 
 // aqui foi feito a inserção de um aluno
-//$aluno = new Usuario("marciomendes", "@123@");
-//$aluno->setDeslogin("marciomendes");
-//$aluno->setDessenha("@123@");
-//$aluno->insert();
-//echo $aluno;
+$aluno = new Usuario("marciomendes", "@123@");
+$aluno->setDeslogin("marciomendes");
+$aluno->setDessenha("@123@");
+$aluno->insert();
+echo $aluno;
 
 // aqui vai ser feita a atualização do aluno
-$aluno = new Usuario();
+/*$aluno = new Usuario();
 $aluno->loadById(10);
 $aluno->update('virgilio@gmail.com','@sertao@');
+echo $aluno;*/
+
+// aqui vamos deletar um aluno
+
+$aluno = new Usuario();
+
+$aluno->loadById(9);
+$aluno->delete();
 echo $aluno;
 
 ?>
